@@ -18,9 +18,10 @@
                 <priority>0</priority>
                 <origins>[location.hostname]</origins>
                 <ignores>#
-logout
 account
-checkout</ignores>
+catalogsearch
+checkout
+logout</ignores>
             </options>
         </rangerz_quicklink>
     </default>
