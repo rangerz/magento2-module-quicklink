@@ -2,16 +2,16 @@
 
 <div align="center">
   <p>A Magento 2 module integrates GoogleChromeLabs/quicklink, ⚡️Faster subsequent page-loads by prefetching in-viewport links during idle time.</p>
-  <img src="https://img.shields.io/badge/magento-2.4-brightgreen.svg?logo=magento&longCache=true&style=flat-square" alt="Supported Magento Versions" />
-  <a href="https://packagist.org/packages/rangerz/magento2-module-quicklink" target="_blank"><img src="https://img.shields.io/packagist/v/rangerz/magento2-module-quicklink.svg?style=flat-square" alt="Latest Stable Version" /></a>
-  <a href="https://packagist.org/packages/rangerz/magento2-module-quicklink" target="_blank"><img src="https://poser.pugx.org/rangerz/magento2-module-quicklink/downloads" alt="Composer Downloads" /></a>
-  <a href="https://github.com/rangerz/magento2-module-quicklink/graphs/commit-activity" target="_blank"><img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square" alt="Maintained - Yes" /></a>
+  <img src="https://img.shields.io/badge/magento-2.4-brightgreen.svg?logo=magento&longCache=true" alt="Supported Magento Versions" />
+  <a href="https://packagist.org/packages/rangerz/magento2-module-quicklink" target="_blank"><img src="https://img.shields.io/packagist/v/rangerz/magento2-module-quicklink" alt="Latest Stable Version" /></a>
+  <a href="https://packagist.org/packages/rangerz/magento2-module-quicklink" target="_blank"><img src="https://img.shields.io/packagist/dt/rangerz/magento2-module-quicklink" alt="Composer Downloads" /></a>
+  <a href="https://github.com/rangerz/magento2-module-quicklink/graphs/commit-activity" target="_blank"><img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen" alt="Maintained - Yes" /></a>
   <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
 </div>
 
 ## How it works
 
-Quicklink attempts to make navigations to subsequent pages load faster. It:
+[Quicklink](https://github.com/GoogleChromeLabs/quicklink) attempts to make navigations to subsequent pages load faster. It:
 
 * **Detects links within the viewport** (using [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API))
 * **Waits until the browser is idle** (using [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback))
@@ -28,7 +28,7 @@ bin/magento setup:upgrade
 
 ## Usage
 
-Stores -> Configuration -> Rangerz Extensions -> Google Quicklink
+After installation, it will be enabled by default. You can find the configuration into `Stores > Configuration > Rangerz Extensions > Google Quicklink`.
 
 ### Google Quicklink
 
@@ -36,9 +36,9 @@ Stores -> Configuration -> Rangerz Extensions -> Google Quicklink
 
 - Enable in Backend
 
-- Enable in Developer Mode 
+- Enable in Developer Mode
 
-### Quicklink Listen Options
+### [Quicklink Listen Options](https://github.com/GoogleChromeLabs/quicklink#quicklinklistenoptions)
 
 - Prerender Mode
 
