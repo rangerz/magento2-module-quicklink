@@ -1,0 +1,13 @@
+<?php
+/** @var $block \Rangerz\Quicklink\Block\QuickLink */
+/** @var $viewModel \Rangerz\Quicklink\ViewModel\QuickLink */
+$viewModel = $block->getViewModel();
+?>
+
+<!-- BEGIN GOOGLE QUICKLINK CODE -->
+<script>
+    require(['quicklink', 'polyfillio', 'domReady!'], function(quicklink) {
+        quicklink.listen(<?= /* @noEscape */ $viewModel->getOptions() ?>);
+    });
+</script>
+<!-- END GOOGLE QUICKLINK CODE -->

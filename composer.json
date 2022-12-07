@@ -1,0 +1,22 @@
+{
+    "name": "rangerz/magento2-module-quicklink",
+    "description": "Faster subsequent page-loads by prefetching in-viewport links during idle time.",
+    "homepage": "https://github.com/rangerz/magento2-module-quicklink",
+    "require": {
+        "php": ">=7.4",
+        "magento/framework": ">=103"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Rangerz\\Quicklink\\": ""
+        }
+    }
+}

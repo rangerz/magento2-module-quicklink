@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="rangerz" translate="label" sortOrder="900">
+            <label>Rangerz Extensions</label>
+        </tab>
+        <section id="rangerz_quicklink" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Google Quicklink</label>
+            <tab>rangerz</tab>
+            <resource>Rangerz_Quicklink::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Quicklink</label>
+                <comment><![CDATA[
+                    <a title="quicklink" target="_blank" href="https://github.com/GoogleChromeLabs/quicklink">Quicklink</a>:
+                    Faster subsequent page-loads by prefetching in-viewport links during idle time.<br>
+                    If you have any issue, please <a title="report issue" target="_blank" href="https://github.com/rangerz/magento2-module-quicklink/issues">report here</a>.
+                ]]></comment>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Quicklink</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enable_in_backend" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable in Backend</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enable_in_developer_mode" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable in Developer Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="options" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quicklink Listen Options</label>
+                <field id="prerender" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Prerender Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[
+                        Whether to switch from the default prefetching mode to the prerendering mode for the links inside the viewport.<br>
+                        <b>Note:</b> The prerendering mode (when this option is set to 'YES') will fallback to the prefetching mode if the browser does not support prerender.
+                    ]]></comment>
+                </field>
+                <field id="delay" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Delay (MS)</label>
+                    <comment><![CDATA[
+                        The <i>amount of time each</i> link needs to stay inside the viewport before being prefetched, in milliseconds.
+                    ]]></comment>
+                </field>
+                <field id="element" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Element</label>
+                    <comment>The DOM element to observe for in-viewport links to prefetch.</comment>
+                </field>
+                <field id="limit" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Request Limit</label>
+                    <comment><![CDATA[
+                        The <i>total</i> requests that can be prefetched while observing the element container.
+                    ]]></comment>
+                </field>
+                <field id="threshold" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Threshold</label>
+                    <comment><![CDATA[
+                        The <i>area percentage</i> of each link that must have entered the viewport to be fetched, in its decimal form (e.g. 0.25 = 25%).
+                    ]]></comment>
+                </field>
+                <field id="throttle" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Concurrency Limit</label>
+                    <comment><![CDATA[
+                        The <i>concurrency limit</i> (throttle) for simultaneous requests while observing the element container.
+                    ]]></comment>
+                </field>
+                <field id="timeout" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Timeout (MS)</label>
+                    <comment><![CDATA[
+                        The requestIdleCallback timeout, in milliseconds.<br>
+                        <b>Note:</b> The browser must be idle for the configured duration before prefetching.
+                    ]]></comment>
+                </field>
+                <field id="priority" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Priority</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[
+                        Whether or not the URLs within the options.el container should be treated as high priority.<br>
+                        When 'YES', quicklink will attempt to use the fetch() API if supported (rather than link[rel=prefetch]).
+                    ]]></comment>
+                </field>
+                <field id="origins" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Origins</label>
+                    <comment>Defaults to the same domain origin, which prevents any cross-origin requests.</comment>
+                </field>
+                <field id="ignores" translate="label" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Ignore List</label>
+                    <comment><![CDATA[
+                        Determine if a URL should be prefetched.<br>
+                        Support <b>RegExp</b> and <b>String</b> and one condition per line.<br>
+                        When a RegExp tests positive or String match a link URL, then the URL is not prefetched.<br>
+                        <b>Important:</b> This logic is executed after origin matching!
+                    ]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

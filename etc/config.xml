@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <rangerz_quicklink>
+            <general>
+                <enabled>1</enabled>
+                <enable_in_backend>1</enable_in_backend>
+                <enable_in_developer_mode>1</enable_in_developer_mode>
+            </general>
+            <options>
+                <prerender>0</prerender>
+                <delay>0</delay>
+                <element>document.body</element>
+                <limit>Infinity</limit>
+                <threshold>0</threshold>
+                <throttle>Infinity</throttle>
+                <timeout>2000</timeout>
+                <priority>0</priority>
+                <origins>[location.hostname]</origins>
+                <ignores>#
+logout
+account
+checkout</ignores>
+            </options>
+        </rangerz_quicklink>
+    </default>
+</config>
