@@ -84,14 +84,17 @@
                 </field>
                 <field id="origins" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Origins</label>
-                    <comment>Defaults to the same domain origin, which prevents any cross-origin requests.</comment>
+                    <comment><![CDATA[
+                        Defaults to the same domain origin (location.hostname), which prevents any cross-origin requests.<br>
+                        Separated by commas for multiple domains.<br>
+                        <b>Important:</b> Empty (no value) allows all origins to be prefetched.
+                    ]]></comment>
                 </field>
                 <field id="ignores" translate="label" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Ignore List</label>
                     <comment><![CDATA[
                         Determine if a URL should be prefetched.<br>
-                        Support <b>RegExp</b> and <b>String</b> and one condition per line.<br>
-                        When a RegExp tests positive or String match a link URL, then the URL is not prefetched.<br>
+                        Separated by commas for multiple rules that contains the string, then the URL is not prefetched.<br>
                         <b>Important:</b> This logic is executed after origin matching!
                     ]]></comment>
                 </field>

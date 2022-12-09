@@ -16,12 +16,8 @@
                 <throttle>Infinity</throttle>
                 <timeout>2000</timeout>
                 <priority>0</priority>
-                <origins>[location.hostname]</origins>
-                <ignores>#
-account
-catalogsearch
-checkout
-logout</ignores>
+                <origins>location.hostname</origins>
+                <ignores>#, account, catalogsearch, checkout, logout</ignores>
             </options>
         </rangerz_quicklink>
     </default>

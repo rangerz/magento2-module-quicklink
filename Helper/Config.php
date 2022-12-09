@@ -63,9 +63,9 @@ class Config extends AbstractHelper
         return (string)$this->getConfig(self::XML_PATH_LIMIT);
     }
 
-    public function getThreshold(): int
+    public function getThreshold(): float
     {
-        return (int)$this->getConfig(self::XML_PATH_THRESHOLD);
+        return (float)$this->getConfig(self::XML_PATH_THRESHOLD);
     }
 
     public function getThrottle(): string
