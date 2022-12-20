@@ -23,14 +23,23 @@
                 <field id="enable_in_backend" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable in Backend</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
                 </field>
                 <field id="enable_in_developer_mode" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable in Developer Mode</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="*/*/enabled">1</field>
+                    </depends>
                 </field>
             </group>
             <group id="options" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Quicklink Listen Options</label>
+                <depends>
+                    <field id="*/general/enabled">1</field>
+                </depends>
                 <field id="prerender" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Prerender Mode</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
