@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Rangerz\Quicklink\ViewModel;
 
 use Magento\Framework\View\Element\Block\ArgumentInterface;
-use Rangerz\Quicklink\Helper\Config;
+use Rangerz\Quicklink\Model\Config;
 
 class Quicklink implements ArgumentInterface
 {
@@ -20,6 +20,7 @@ class Quicklink implements ArgumentInterface
     {
         $options = [
             'prerender' => $this->config->isPrerender(),
+            'prerenderAndPrefetch' => $this->config->isPrerenderAndPrefetch(),
             'delay' => $this->config->getDelay(),
             'el' => $this->config->getElement(),
             'limit' => $this->config->getLimit(),

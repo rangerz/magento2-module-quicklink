@@ -1,27 +1,36 @@
 <?php
 declare(strict_types=1);
 
-namespace Rangerz\Quicklink\Helper;
+namespace Rangerz\Quicklink\Model;
 
-use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
-class Config extends AbstractHelper
+class Config
 {
     private const XML_PATH_ENABLED                  = 'rangerz_quicklink/general/enabled';
     private const XML_PATH_ENABLE_IN_BACKEND        = 'rangerz_quicklink/general/enable_in_backend';
     private const XML_PATH_ENABLE_IN_DEVELOPER_MODE = 'rangerz_quicklink/general/enable_in_developer_mode';
 
-    private const XML_PATH_PRERENDER = 'rangerz_quicklink/options/prerender';
-    private const XML_PATH_DELAY     = 'rangerz_quicklink/options/delay';
-    private const XML_PATH_ELEMENT   = 'rangerz_quicklink/options/element';
-    private const XML_PATH_LIMIT     = 'rangerz_quicklink/options/limit';
-    private const XML_PATH_THRESHOLD = 'rangerz_quicklink/options/threshold';
-    private const XML_PATH_THROTTLE  = 'rangerz_quicklink/options/throttle';
-    private const XML_PATH_TIMEOUT   = 'rangerz_quicklink/options/timeout';
-    private const XML_PATH_PRIORITY  = 'rangerz_quicklink/options/priority';
-    private const XML_PATH_ORIGINS   = 'rangerz_quicklink/options/origins';
-    private const XML_PATH_IGNORES   = 'rangerz_quicklink/options/ignores';
+    private const XML_PATH_PRERENDER              = 'rangerz_quicklink/options/prerender';
+    private const XML_PATH_PRERENDER_AND_PREFETCH = 'rangerz_quicklink/options/prerender_and_prefetch';
+    private const XML_PATH_DELAY                  = 'rangerz_quicklink/options/delay';
+    private const XML_PATH_ELEMENT                = 'rangerz_quicklink/options/element';
+    private const XML_PATH_LIMIT                  = 'rangerz_quicklink/options/limit';
+    private const XML_PATH_THRESHOLD              = 'rangerz_quicklink/options/threshold';
+    private const XML_PATH_THROTTLE               = 'rangerz_quicklink/options/throttle';
+    private const XML_PATH_TIMEOUT                = 'rangerz_quicklink/options/timeout';
+    private const XML_PATH_PRIORITY               = 'rangerz_quicklink/options/priority';
+    private const XML_PATH_ORIGINS                = 'rangerz_quicklink/options/origins';
+    private const XML_PATH_IGNORES                = 'rangerz_quicklink/options/ignores';
+
+    protected $scopeConfig;
+
+    public function __construct(
+        ScopeConfigInterface $scopeConfig
+    ) {
+        $this->scopeConfig = $scopeConfig;
+    }
 
     public function getConfig($path, $scopeCode = null)
     {
@@ -46,6 +55,11 @@ class Config extends AbstractHelper
     public function isPrerender(): bool
     {
         return (bool)$this->getConfig(self::XML_PATH_PRERENDER);
+    }
+
+    public function isPrerenderAndPrefetch(): bool
+    {
+        return (bool)$this->getConfig(self::XML_PATH_PRERENDER_AND_PREFETCH);
     }
 
     public function getDelay(): int

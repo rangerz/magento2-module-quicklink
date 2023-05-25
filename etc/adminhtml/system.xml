@@ -48,35 +48,40 @@
                         <b>Note:</b> The prerendering mode (when this option is set to 'YES') will fallback to the prefetching mode if the browser does not support prerender.
                     ]]></comment>
                 </field>
-                <field id="delay" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="prerender_and_prefetch" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Prerender and Prefetch</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Whether to activate both the prefetching and prerendering mode at the same time.</comment>
+                </field>
+                <field id="delay" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Delay (MS)</label>
                     <comment><![CDATA[
                         The <i>amount of time each</i> link needs to stay inside the viewport before being prefetched, in milliseconds.
                     ]]></comment>
                 </field>
-                <field id="element" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="element" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Element</label>
                     <comment>The DOM element to observe for in-viewport links to prefetch.</comment>
                 </field>
-                <field id="limit" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="limit" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Request Limit</label>
                     <comment><![CDATA[
                         The <i>total</i> requests that can be prefetched while observing the element container.
                     ]]></comment>
                 </field>
-                <field id="threshold" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="threshold" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Threshold</label>
                     <comment><![CDATA[
                         The <i>area percentage</i> of each link that must have entered the viewport to be fetched, in its decimal form (e.g. 0.25 = 25%).
                     ]]></comment>
                 </field>
-                <field id="throttle" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="throttle" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Concurrency Limit</label>
                     <comment><![CDATA[
                         The <i>concurrency limit</i> (throttle) for simultaneous requests while observing the element container.
                     ]]></comment>
                 </field>
-                <field id="timeout" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="timeout" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Timeout (MS)</label>
                     <comment><![CDATA[
                         The requestIdleCallback timeout, in milliseconds.<br>

@@ -9,6 +9,7 @@
             </general>
             <options>
                 <prerender>0</prerender>
+                <prerender_and_prefetch>0</prerender_and_prefetch>
                 <delay>0</delay>
                 <element>document.body</element>
                 <limit>Infinity</limit>

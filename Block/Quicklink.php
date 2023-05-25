@@ -6,7 +6,7 @@ namespace Rangerz\Quicklink\Block;
 use Magento\Framework\App\Area;
 use Magento\Framework\App\State;
 use Magento\Framework\View\Element\Template;
-use Rangerz\Quicklink\Helper\Config;
+use Rangerz\Quicklink\Model\Config;
 
 class Quicklink extends Template
 {
