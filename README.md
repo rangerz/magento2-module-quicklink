@@ -26,13 +26,9 @@ bin/magento module:enable Rangerz_Quicklink
 bin/magento setup:upgrade
 ```
 
-
-
 ## Usage
 
 After installation, it will be enabled by default. You can find the configuration into `Stores > Configuration > Rangerz Extensions > Google Quicklink`.
-
-
 
 ### Google Quicklink
 
@@ -42,91 +38,89 @@ After installation, it will be enabled by default. You can find the configuratio
 
 - Enable in Developer Mode
 
-
-
 ### [Quicklink Listen Options](https://github.com/GoogleChromeLabs/quicklink#quicklinklistenoptions)
 
 - Prerender Mode
-  
+
   - Default: `No` (Boolean)
-  
+
   Whether to switch from the default prefetching mode to the prerendering mode for the links inside the viewport.Prerender and Prefetch
-  
+
   > **Note:** The prerendering mode (when this option is set to true) will fallback to the prefetching mode if the browser does not support prerender.
 
-- - Default: `No` (Boolean)
-  
+- Prerender and Prefetch
+
+  - Default: `No` (Boolean)
+
   Whether to activate both the prefetching and prerendering mode at the same time.
 
 - Delay (MS)
-  
+
   - Default: `0` (Number)
-  
+
   The *amount of time* each link needs to stay inside the viewport before being prefetched, in milliseconds.
 
 - Element
-  
+
   - Default: `document.body` (HTMLElement|NodeList<A>)
-  
+
   The DOM element to observe for in-viewport links to prefetch or the NodeList of Anchor Elements.
 
 - Request Limit
-  
+
   - Default: `Infinity` (Number)
-  
+
   The *total* requests that can be prefetched or prerendered while observing the `Element` container.
 
 - Threshold
-  
+
   - Default: `0` (Number)
-  
+
   The *area percentage* of each link that must have entered the viewport to be fetched, in its decimal form (e.g. 0.25 = 25%).
 
 - Concurrency Limit
-  
+
   - Default: `Infinity` (Number)
-  
+
   The* concurrency limit *for simultaneous requests while observing the `Element` container.
 
 - Timeout (MS)
-  
+
   - Default: `2000` (Number)
-  
+
   The `requestIdleCallback` timeout, in milliseconds.
-  
+
   > **Note:** The browser must be idle for the configured duration before prefetching.
 
 - Priority
-  
+
   - Default: `No` (Boolean)
-  
+
   Whether or not the URLs within the `Element` container should be treated as high priority.
-  
+
   When `Yes`, quicklink will attempt to use the `fetch()` API if supported (rather than `link[rel=prefetch]`).
 
 - Origins
-  
+
   - Default: `[location.hostname]` (Array<String>)
-  
+
   A static array of URL hostnames that are allowed to be prefetched.
-  
+
   Defaults to the same domain origin, which prevents *any* cross-origin requests.
-  
+
   **Important:** An empty array (`[]`) allows ***all origins*** to be prefetched.
 
 - Ignore List
-  
+
   - Default: `[]` (`RegExp` or `Function` or `Array`)
-  
+
   Determine if a URL should be prefetched.
-  
+
   When a `RegExp` tests positive, a `Function` returns `true`, or an `Array` contains the string, then the URL is *not* prefetched.
-  
+
   > **Note:** An `Array` may contain `String`, `RegExp`, or `Function` values.
-  
+
   > **Important:** This logic is executed *after* origin matching!
-
-
 
 ### Option not supported for setting
 
@@ -136,13 +130,9 @@ After installation, it will be enabled by default. You can find the configuratio
 
 - hrefFn
 
-
-
 ## Credits
 
 Inspired by [rafaelstz/magento2-quicklink](https://github.com/rafaelstz/magento2-quicklink)
-
-
 
 ## License
 
